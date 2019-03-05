@@ -1,0 +1,141 @@
+.notify-container {
+    z-index: 1000;
+    position: fixed;
+    width: 320px;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+.container-top_right {
+    top: 1em;
+    right: 1em;
+}
+
+.container-top_left {
+    top: 1em;
+    left: 1em;
+}
+
+.container-bottom_right {
+    bottom: 1em;
+    right: 1em;
+}
+
+.container-bottom_left {
+    bottom: 1em;
+    left: 1em;
+}
+
+.container-center_bottom {
+    bottom: 1em;
+    left: 50%;
+    margin-left: -160px;
+}
+
+.container-center_top {
+    top: 1em;
+    left: 50%;
+    margin-left: -160px;
+}
+
+.note-general {
+    position: relative;
+    width: 100%;
+    display: table;
+    font-weight: 500;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .1), 0 2px 15px 0 rgba(0, 0, 0, .05);
+    min-height: 70px;
+    max-height: 800px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+
+.close-btn {
+    cursor:pointer;
+}
+
+.note-success {
+    border: 2px solid #4CD964;
+    background-color: #e5ffe9;
+    color: #379646;
+}
+
+.note-info {
+    border: 2px solid #5ac8fa;
+    background-color: #e8f7ff;
+    color: #398cb3;
+}
+
+.note-alert {
+    border: 2px solid #fe3b30;
+    background-color: #ffe8e7;
+    color: #e2342a;
+}
+
+.note-warning {
+    border: 2px solid #ff9500;
+    background-color:  #fff5e6;
+    color: #ca7702;
+}
+
+.note-body {
+    width: 75%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: .9375rem;
+}
+
+.note-btn {
+    width: 25%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.note-btn-success {
+    border-left: 1px solid #4CD964;
+}
+
+.note-btn-info {
+    border-left: 1px solid #5ac8fa;
+}
+
+.note-btn-alert {
+    border-left: 1px solid #fe3b30;
+}
+
+.note-btn-warning {
+    border-left: 1px solid #ff9500;
+}
+
+.note-bounceInRight {
+    animation-name: note_bounceInRight;
+    animation-duration: .75s;
+}
+
+@keyframes note_bounceInRight {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    from {
+        opacity: 0;
+        transform: translate3d(3000px, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(-25px, 0, 0);
+    }
+    75% {
+        transform: translate3d(10px, 0, 0);
+    }
+    90% {
+        transform: translate3d(-5px, 0, 0);
+    }
+    to {
+        transform: none;
+    }
+}

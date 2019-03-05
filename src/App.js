@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import NoteContainer from './components/NoteContainer';
 import notify from './scripts/helpers/notify';
+import './components/notify.css';
 
 class App extends Component {
   componentDidMount(){

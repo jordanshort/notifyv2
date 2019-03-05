@@ -34,27 +34,24 @@ export default class Note extends Component {
 
     render(){
         const { children, transition: Transition, type, closeNote, position, className, updateId, role } = this.props;
-        //TO DO: assign classNames after creating them
         const noteProps = {
-            className: cx()
+            className: cx(
+                'note-general',
+                `note-${type}`
+            )
         }
         return(
-            <Transition
-                in={this.props.in}
-                unmountOnExit
-                position={position}
-                preventExitTransition={this.state.preventExitTransition}
-            >
+            <div className="note-bounceInRight">
                 <div {...noteProps}>
-                    <div>
+                    <div className={cx('note-body', `note-body-${type}`)}>
                         {children}
                     </div>
-                    <div>
-                        <button type="button" onClick={closeNote}>X</button>
+                    <div className={cx('note-btn', `note-btn-${type}`)}>
+                        <div className="close-btn" onClick={closeNote}>Close</div>
                     </div>
                 </div>
 
-            </Transition>
+            </div>
         )
     }
 }

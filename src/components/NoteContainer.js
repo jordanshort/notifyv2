@@ -42,7 +42,7 @@ export default class NoteContainer extends Component{
     isNoteActive = id => this.state.notes.indexOf(id) !== -1;
 
     removeNote(id){
-        this.setState({ note: this.state.notes.filter(n => n !== id)}, this.dispatchChange);
+        this.setState({ notes: this.state.notes.filter(n => n !== id)}, this.dispatchChange);
     }
 
     dispatchChange(){
@@ -114,13 +114,16 @@ export default class NoteContainer extends Component{
         return Object.keys(notesToRender).map(position => {
             //TO DO: determine classNames and how they'll get here
             const props = {
-                className: cx()
+                className: cx(
+                    'notify-container',
+                    `container-${position}`
+                )
             };
 
             return (
-                <TransitionGroup {...props} key={`container-${position}`}>
+                <div {...props} key={`container-${position}`}>
                     {notesToRender[position]}
-                </TransitionGroup>
+                </div>
             );
         });
     }
