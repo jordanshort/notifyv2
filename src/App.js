@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NoteContainer from './components/NoteContainer';
+import notify from './scripts/helpers/notify';
 
 class App extends Component {
+  componentDidMount(){
+    console.log(notify);
+  }
+
+  handleSuccess(){
+    notify.success("This is a success message");
+  }
+  handleDanger(){
+    notify.alert("This is an alert message");
+  }
+  handleWarning(){
+    notify.warning("This is a warning message");
+  }
+  handleInfo(){
+    notify.info("This is an info message");
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <button onClick={this.handleSuccess}>Success</button>
+        <button onClick={this.handleDanger}>Danger</button>
+        <button onClick={this.handleWarning}>Warning</button>
+        <button onClick={this.handleInfo}>Info</button>
+
+        <NoteContainer />
+
       </div>
     );
   }
